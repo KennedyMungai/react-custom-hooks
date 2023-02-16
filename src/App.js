@@ -8,7 +8,7 @@ function App()
 {
   const [tasks, setTasks] = useState([]);
 
-  const transformTasks = tasksObj =>
+  const transformTasks = useCallback(tasksObj =>
   {
     const loadedTasks = [];
 
@@ -18,7 +18,7 @@ function App()
     }
 
     setTasks(loadedTasks);
-  }
+  }, [])
 
   const { isLoading, error, sendRequest: fetchTasks } = useHttp({
     url: 'https://simple-react-backend-default-rtdb.firebaseio.com/tasks.json',
