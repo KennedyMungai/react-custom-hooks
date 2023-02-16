@@ -9,7 +9,7 @@ const useCounter = () =>
     {
         const interval = setInterval(() =>
         {
-            setCounter((prevCounter) => prevCounter - 1);
+            setCounter((prevCounter) => prevCounter + 1);
         }, 1000);
 
         return () => clearInterval(interval);
