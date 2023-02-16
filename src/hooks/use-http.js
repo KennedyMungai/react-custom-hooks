@@ -12,7 +12,7 @@ const useHttp = (requestConfig) =>
         try
         {
             const response = await fetch(
-                'https://simple-react-backend-default-rtdb.firebaseio.com/tasks.json'
+                requestConfig.url
             );
 
             if (!response.ok)
