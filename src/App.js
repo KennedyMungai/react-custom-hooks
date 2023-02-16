@@ -16,7 +16,7 @@ function App()
     try
     {
       const response = await fetch(
-        'https://simple-react-backend-default-rtdb.firebaseio.com/'
+        'https://simple-react-backend-default-rtdb.firebaseio.com/tasks.json'
       );
 
       if (!response.ok)
