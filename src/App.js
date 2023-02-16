@@ -3,20 +3,24 @@ import React, { useEffect, useState } from 'react';
 import Tasks from './components/Tasks/Tasks';
 import NewTask from './components/NewTask/NewTask';
 
-function App() {
+function App()
+{
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const [tasks, setTasks] = useState([]);
 
-  const fetchTasks = async (taskText) => {
+  const fetchTasks = async (taskText) =>
+  {
     setIsLoading(true);
     setError(null);
-    try {
+    try
+    {
       const response = await fetch(
-        'https://react-http-6b4a6.firebaseio.com/tasks.json'
+        'https://simple-react-backend-default-rtdb.firebaseio.com/'
       );
 
-      if (!response.ok) {
+      if (!response.ok)
+      {
         throw new Error('Request failed!');
       }
 
@@ -24,22 +28,26 @@ function App() {
 
       const loadedTasks = [];
 
-      for (const taskKey in data) {
+      for (const taskKey in data)
+      {
         loadedTasks.push({ id: taskKey, text: data[taskKey].text });
       }
 
       setTasks(loadedTasks);
-    } catch (err) {
+    } catch (err)
+    {
       setError(err.message || 'Something went wrong!');
     }
     setIsLoading(false);
   };
 
-  useEffect(() => {
+  useEffect(() =>
+  {
     fetchTasks();
   }, []);
 
-  const taskAddHandler = (task) => {
+  const taskAddHandler = (task) =>
+  {
     setTasks((prevTasks) => prevTasks.concat(task));
   };
 
