@@ -5,6 +5,8 @@ import Card from './Card';
 
 const ForwardCounter = () =>
 {
+  useCounter()
+
   const [counter, setCounter] = useState(0);
 
   useEffect(() =>
