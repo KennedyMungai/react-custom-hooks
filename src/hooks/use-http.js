@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const useHttp = () =>
+const useHttp = (requestConfig) =>
 {
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
