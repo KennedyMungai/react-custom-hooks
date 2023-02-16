@@ -20,7 +20,7 @@ const useCounter = (isPositive = true) =>
         }, 1000);
 
         return () => clearInterval(interval);
-    }, []);
+    }, [isPositive]);
 
     return counter
 }
